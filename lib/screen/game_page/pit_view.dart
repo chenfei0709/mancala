@@ -1,36 +1,27 @@
 import 'package:flutter/material.dart';
 
 class PitView extends StatelessWidget {
-  final double squareSize;
   final Color color;
+  final int pitCount;
 
-  const PitView({required this.squareSize, required this.color, super.key});
+  const PitView({required this.color, required this.pitCount, super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: squareSize,
-      height: squareSize,
-      color: color,
-    );
-  }
-}
-
-class PitListView extends StatelessWidget {
-  final int count;
-  final double squareSize;
-  final Color color;
-
-  const PitListView({required this.count, required this.squareSize, required this.color, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: List<Widget>.generate(
-        count,
-        (index) => PitView(squareSize: squareSize, color: color),
-      ),
+    return Column(
+      children: [
+        Container(
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            border: Border.all(color: pitCount == 0 ? Colors.grey : color, width: 2),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Center(
+            child: Text(pitCount.toString()),
+          ),
+        ),
+      ],
     );
   }
 }

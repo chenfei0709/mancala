@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mancala/screen/game_page/game_page.dart';
-import 'package:mancala/util/screen_size_util.dart';
+
+import '../util/screen_size_util.dart';
+import 'game_page/game_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,9 +15,9 @@ class HomeScreen extends StatelessWidget {
       body: Row(
         children: [
           SizedBox(
-            width: ScreenSizeUtil.getWidth(context) * 0.7,
-            height: double.infinity,
-            child: const GamePage(),
+            width: 550,
+            height: 350,
+            child: GamePage(),
           ),
           Container(
             width: ScreenSizeUtil.getWidth(context) * 0.3,
